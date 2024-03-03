@@ -82,6 +82,24 @@
     margin-top: 10px;
 }
 
+.footer{
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.foot-innehåll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kontakt-info{
+    text-align: center;
+}
 
 @media screen and (max-width: 600px) {
     .header {
