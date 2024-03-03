@@ -1,66 +1,54 @@
-var varukorgBild = document.querySelector('.varukorg');
-var varukorgPopup = document.getElementById('varukorgPopup');
-var stängBtn = document.getElementById('stängBtn');
+var varukorgBild = document.querySelector('.varukorg'); // Hämta varukorgsbilden
+var varukorgPopup = document.getElementById('varukorgPopup'); // Hämta varukorgspopupen
+var stängBtn = document.getElementById('stängBtn'); // Hämta stängknappen för popupen
 
-// Visa varukorgs-popupen när varukorgsbilden klickas
-varukorgBild.addEventListener('click', function() {
-    varukorgPopup.style.display = 'block';
+varukorgBild.addEventListener('click', function() { // Lyssna på klick på varukorgsbilden
+    varukorgPopup.style.display = 'block'; // Visa varukorgspopupen när bilden klickas
 });
 
-// Göm varukorgs-popupen när stängknappen klickas
-stängBtn.addEventListener('click', function() {
-    varukorgPopup.style.display = 'none';
-})
+stängBtn.addEventListener('click', function() { // Lyssna på klick på stängknappen
+    varukorgPopup.style.display = 'none'; // Göm varukorgspopupen när stängknappen klickas
+});
 
-// Hämta alla knappar för att lägga till i varukorgen
-var läggTillKnappar = document.querySelector('.lägg-till');
+var läggTillKnappar = document.querySelectorAll('.lägg-till'); // Hämta alla "lägg till i varukorg"-knappar
 
-// Lyssna på klickhändelser för varje lägg till i varukorg-knapp
-läggTillKnappar.forEach(function(knapp){
-    knapp.addEventListener('click', function(){
-        // Hämta produktens information från den närliggande DOM
-        var produktInfo = knapp.parentNode;
-        var produktNamn = produktInfo.querySelector('img').alt;
-        var produktPris = produktInfo.querySelector('.pris').textContent;
+läggTillKnappar.forEach(function(knapp) { // Loopa igenom varje "lägg till i varukorg"-knapp
+    knapp.addEventListener('click', function() { // Lyssna på klick på varje knapp
+        var produktInfo = knapp.parentNode; // Hämta föräldernoden till knappen (produktinformation)
+        var produktNamn = produktInfo.querySelector('img').alt; // Hämta produktens namn från bildens alt-attribut
+        var produktPris = produktInfo.querySelector('.pris').textContent; // Hämta produktens pris från elementet med klassen "pris"
 
-        // Skapa en ny listpunkt för varje produkt och lägg till i varukorgslistan
-        var varukorgLista = document.getElementById('varukorgLista');
-        var nyProdukt = document.createElement('li');
-        nyProdukt.textContent = `${produktNamn} - ${produktPris}`;
-        varukorgLista.appendChild(nyProdukt);
-    })
-})
-
-// Funktion för att uppdatera det totala priset i varukorgen
-function uppdateraTotalPris() {
-    var totalPrisElement = document.getElementById('totalPris');
-    var totalPris = 0;
-    
-    // Loopa igenom alla listpunkter i varukorgen och lägg till priserna
-    var varukorgListePunkter = document.querySelectorAll('.varukorg-lista li');
-    varukorgListePunkter.forEach(function(punkt) {
-        var produktPrisText = punkt.textContent.split(' - ')[1]; // Få tag på priset från texten
-        var produktPris = parseFloat(produktPrisText.replace(' kr', '')); // Konvertera priset till ett flyttal
-        totalPris += produktPris;
+        var varukorgLista = document.getElementById('varukorgLista'); // Hämta varukorgslistan
+        var nyProdukt = document.createElement('li'); // Skapa en ny listpunkt för produkten
+        nyProdukt.textContent = `${produktNamn} - ${produktPris}`; // Fyll listpunkten med produktens namn och pris
+        varukorgLista.appendChild(nyProdukt); // Lägg till listpunkten i varukorgslistan
     });
-    
-    // Visa det totala priset
-    totalPrisElement.textContent = 'Totalt pris: ' + totalPris.toFixed(2) + ' kr';
+});
+
+function uppdateraTotalPris() { // Funktion för att uppdatera det totala priset i varukorgen
+    var totalPrisElement = document.getElementById('totalPris'); // Hämta elementet för det totala priset
+    var totalPris = 0; // Skapa en variabel för det totala priset och sätt den till noll
+
+    var varukorgListePunkter = document.querySelectorAll('.varukorg-lista li'); // Hämta alla listpunkter i varukorgen
+    varukorgListePunkter.forEach(function(punkt) { // Loopa igenom varje listpunkt
+        var produktPrisText = punkt.textContent.split(' - ')[1]; // Dela upp texten för att få fram priset
+        var produktPris = parseFloat(produktPrisText.replace(' kr', '')); // Konvertera priset till ett flyttal
+        totalPris += produktPris; // Lägg till priset till totalpriset
+    });
+
+    totalPrisElement.textContent = 'Totalt pris: ' + totalPris.toFixed(2) + ' kr'; // Visa det totala priset
 }
 
-// Lyssna på klickhändelser för varje lägg till i varukorgen-knapp
-läggTillKnappar.forEach(function(knapp) {
-    knapp.addEventListener('click', function() {
-        // Här lägger du till koden för att lägga till produkten i varukorgen
-        uppdateraTotalPris(); // Uppdatera det totala priset efter att en produkt lagts till
+läggTillKnappar.forEach(function(knapp) { // Lyssna på klick på varje "lägg till i varukorg"-knapp
+    knapp.addEventListener('click', function() { // När en knapp klickas
+        uppdateraTotalPris(); // Uppdatera det totala priset
     });
 });
 
-var rensaKorgBtn = document.getElementById('rensaKorg');
+var rensaKorgBtn = document.getElementById('rensaKorg'); // Hämta knappen för att rensa varukorgen
 
-// Lyssna på klickhändelser för rensa-knappen
-rensaKorgBtn.addEventListener('click', function() {
-    var varukorgLista = document.getElementById('varukorgLista');
+rensaKorgBtn.addEventListener('click', function() { // Lyssna på klick på rensa-knappen
+    var varukorgLista = document.getElementById('varukorgLista'); // Hämta varukorgslistan
     varukorgLista.innerHTML = ''; // Ta bort allt innehåll från varukorgslistan
-    uppdateraTotalPris();
+    uppdateraTotalPris(); // Uppdatera det totala priset
 });
