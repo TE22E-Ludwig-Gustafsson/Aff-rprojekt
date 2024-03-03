@@ -56,8 +56,16 @@
 }
 
 .produkt{
-    
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
 }
+
+.produkt img{
+    max-width: 100%;
+    max-height: 150px;
+}
+
 
 @media screen and (max-width: 600px) {
     .header {
