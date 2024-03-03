@@ -8,20 +8,15 @@
     background-color: #000;
     color: #fff;
 }
-.logga,
-.varukorg {
+.logga{
     width: 4rem; /* Justera storlek vid behov */
     height: auto; /* För att behålla proportioner */
 }
+
 .hemsida-namn {
     font-size: 1.6rem;
     font-weight: bold;
     margin-left: 1rem;
-}
-.partners,
-.varukorg-text {
-    font-size: 1.2rem;
-    font-weight: bold;
 }
 
 .knappar {
@@ -31,6 +26,11 @@
     background-color: #f0f0f0;
 }
 .knapp {
+    padding: 0.5rem 1rem;
+    color: solid black
+}
+
+.partners {
     padding: 0.5rem 1rem;
     color: solid black
 }
@@ -101,12 +101,59 @@
     text-align: center;
 }
 
-@media screen and (max-width: 600px) {
-    .header {
-        flex-direction: row;
-        text-align: center; /* Centrera texten */
-    }
-    .button-container {
-        padding: 0.5rem;
-    }
+
+
+/* Din befintliga CSS-stil här */
+
+.varukorg {
+    width: 4rem; 
+    height: auto; 
+    cursor: pointer; /* För att markera att det är klickbart */
 }
+
+.varukorg-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%; /* Anpassa efter önskad bredd */
+    height: 100vh; /* Täcker hela skärmen */
+    background-color: rgba(0, 0, 0, 0.5); /* Delvis genomskinlig bakgrundsfärg */
+    z-index: 999; /* Se till att popupen ligger över andra element */
+    overflow-y: auto; /* Låt det finnas en vertikal scrollbar vid behov */
+    padding: 20px; /* Utrymme runt innehållet */
+    box-sizing: border-box; /* Inkludera padding och border i totala bredden */
+}
+
+.varukorg-innehåll {
+    background-color: #fff; /* Bakgrundsfärg för innehållet */
+    height: 100%; /* Höjden täcker hela popupen */
+}
+
+
+/* Anpassa övriga stilar för att passa popupens bredd och innehåll */
+
+
+.stäng-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    padding: 5px; /* Öka padding för att göra knappen större */
+    border-radius: 50%; /* Rundad kant för en knapp som ser ut som en cirkel */
+    background-color: #fff; /* Bakgrundsfärg för att göra knappen synlig */
+}
+
+
+.centrerad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#rensaKorg {
+    margin-bottom: 10px; /* Justera om det behövs */
+}
+
+
+
