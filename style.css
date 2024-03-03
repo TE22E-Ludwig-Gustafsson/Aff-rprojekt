@@ -1,3 +1,5 @@
+/*Header*/
+
 .header {
     display: flex;
     align-items: center;
@@ -31,6 +33,12 @@
 .knapp {
     padding: 0.5rem 1rem;
     color: solid black
+}
+
+/*produker*/
+
+.rubrik{
+    
 }
 
 @media screen and (max-width: 600px) {
