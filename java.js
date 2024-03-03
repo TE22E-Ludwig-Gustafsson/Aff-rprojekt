@@ -30,3 +30,37 @@ läggTillKnappar.forEach(function(knapp){
         varukorgLista.appendChild(nyProdukt);
     })
 })
+
+// Funktion för att uppdatera det totala priset i varukorgen
+function uppdateraTotalPris() {
+    var totalPrisElement = document.getElementById('totalPris');
+    var totalPris = 0;
+    
+    // Loopa igenom alla listpunkter i varukorgen och lägg till priserna
+    var varukorgListePunkter = document.querySelectorAll('.varukorg-lista li');
+    varukorgListePunkter.forEach(function(punkt) {
+        var produktPrisText = punkt.textContent.split(' - ')[1]; // Få tag på priset från texten
+        var produktPris = parseFloat(produktPrisText.replace(' kr', '')); // Konvertera priset till ett flyttal
+        totalPris += produktPris;
+    });
+    
+    // Visa det totala priset
+    totalPrisElement.textContent = 'Totalt pris: ' + totalPris.toFixed(2) + ' kr';
+}
+
+// Lyssna på klickhändelser för varje lägg till i varukorgen-knapp
+läggTillKnappar.forEach(function(knapp) {
+    knapp.addEventListener('click', function() {
+        // Här lägger du till koden för att lägga till produkten i varukorgen
+        uppdateraTotalPris(); // Uppdatera det totala priset efter att en produkt lagts till
+    });
+});
+
+var rensaKorgBtn = document.getElementById('rensaKorg');
+
+// Lyssna på klickhändelser för rensa-knappen
+rensaKorgBtn.addEventListener('click', function() {
+    var varukorgLista = document.getElementById('varukorgLista');
+    varukorgLista.innerHTML = ''; // Ta bort allt innehåll från varukorgslistan
+    uppdateraTotalPris();
+});
