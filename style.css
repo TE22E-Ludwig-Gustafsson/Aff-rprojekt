@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+}
+.logga,
+.varukorg {
+    width: 4rem; /* Justera storlek vid behov */
+    height: auto; /* För att behålla proportioner */
+}
+.hemsida-namn {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+.partners,
+.varukorg-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.knappar {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    background-color: #f0f0f0;
+}
+.knapp {
+    padding: 0.5rem 1rem;
+    color: solid black
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        flex-direction: row;
+        text-align: center; /* Centrera texten */
+    }
+    .button-container {
+        padding: 0.5rem;
+    }
+}
