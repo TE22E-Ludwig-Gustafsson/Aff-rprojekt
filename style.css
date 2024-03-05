@@ -1,169 +1,188 @@
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
 /* Header */
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background-color: #000;
-    color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #000;
+  color: #fff;
 }
-.logga{
-    width: 4rem; 
-    height: auto; /* För att behålla proportioner */
+.logga {
+  width: 4rem;
+  height: auto; /* För att behålla proportioner */
 }
 
 .hemsida-namn {
-    
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-left: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-left: 1rem;
 }
 
 .knappar {
-    display: flex;
-    justify-content: space-around;
-    padding: 0.5rem 0rem;
-    background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0rem;
+  background-color: #f0f0f0;
 }
 .knapp {
-    padding: 0.5rem 1rem;
-    color: solid black
+  padding: 0.5rem 1rem;
+  color: solid black;
 }
 
 .partners {
-    padding: 0.5rem 1rem;
-    color: solid black
+  padding: 0.5rem 1rem;
+  color: solid black;
 }
 
 /* produker */
 
-.rubrik{
-    text-align: center; 
-    margin-top: 2rem;
-    background-color: #fff;
+.rubrik {
+  text-align: center;
+  margin-top: 2rem;
+  background-color: #fff;
 }
 
-.produkter, .produkter2{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 1rem;
+.produkter,
+.produkter2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 1rem;
 }
 
-.produkt{
-    width: calc(33.33% - 20px);
-    margin-bottom: 20px;
-    text-align: center;
+.produkt {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.produkt img{
-    max-width: 100%;
-    max-height: 150px;
+.produkt img {
+  max-width: 100%;
+  max-height: 150px;
 }
 
-.pris{
-    margin-top: 10px;
-    font-size: 1.2rem;
+.pris {
+  margin-top: 10px;
+  font-size: 1.2rem;
 }
 
-.lägg-till{
-    padding: 0.5rem 1rem;
-    background-color: #6FDB3C;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
+.lägg-till {
+  padding: 0.5rem 1rem;
+  background-color: #6fdb3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-/* Footer */ 
+/* Footer */
 
-.footer{
-    background-color: #000;
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.foot-innehåll{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.foot-innehåll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.kontakt-info{
-    text-align: center;
+.kontakt-info {
+  text-align: center;
 }
 
 /* Varukorgen */
 
 .varukorg {
-    width: 4rem; 
-    height: auto; 
-    cursor: pointer; /* För att markera att det är klickbart */
+  width: 4rem;
+  height: auto;
+  cursor: pointer; /* För att markera att det är klickbart */
 }
 
 .varukorg-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 20%; 
-    height: 100vh; /* Täcker hela skärmen */
-    padding: 20px; /* Utrymme runt innehållet */
-    box-sizing: border-box; 
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100vh; /* Täcker hela skärmen */
+  padding: 20px; /* Utrymme runt innehållet */
+  box-sizing: border-box;
 }
 
 .varukorg-innehåll {
-    background-color: #fff; /* Bakgrundsfärg för innehållet */
-    height: 100%; /* Höjden täcker hela popupen */
+  background-color: #fff; /* Bakgrundsfärg för innehållet */
+  height: 100%; /* Höjden täcker hela popupen */
 }
 
 .stäng-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    padding: 5px; 
-    border-radius: 50%; /* Rundad kant för en knapp som ser ut som en cirkel */
-    background-color: #fff; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%; /* Rundad kant för en knapp som ser ut som en cirkel */
+  background-color: #fff;
 }
 
 .centrerad {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #rensaKorg {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
+
 
 
 /* Stilregler för mobil */
 @media only screen and (max-width: 767px) {
-    main{
-        display: grid;
-        grid-template-rows: 1;
-        place-items: center;
-    }
-
+  .produkter {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+  .produkter2 {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
 }
 
 /* stilregler för tables */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-
+  .produkter {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    place-items: center;
+  }
+  .produkter2 {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    place-items: center;
+  }
 }
 
 /* stilregler för dator */
 @media only screen and (min-width: 1025px) {
+    .produkter{
+        grid-template-columns: 1fr 1fr 1fr;
+        display: grid;
+        place-items: center;
+    }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap')
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
