@@ -67,7 +67,7 @@ body {
 
 .pris {
   margin-top: 10px;
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 .lägg-till {
@@ -109,17 +109,6 @@ body {
   height: auto;
   cursor: pointer; /* För att markera att det är klickbart */
 }
-
-/* .varukorg-popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 20%;
-  height: 100vh;  
-  padding: 20px; /* Utrymme runt innehållet */
-/* box-sizing: border-box; */
-/* } */
 
 .varukorg-innehåll {
   background-color: #fff; /* Bakgrundsfärg för innehållet */
